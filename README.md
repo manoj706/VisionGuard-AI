@@ -1,6 +1,6 @@
 <div align="center">
 
-# 👁️ VisionGuardAI
+#  VisionGuardAI
 
 ### AI-Powered Multi-Camera Scene Intelligence
 
@@ -40,7 +40,7 @@ Operators search footage in plain English:
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 | Feature | Description |
 |---|---|
@@ -60,25 +60,25 @@ Operators search footage in plain English:
 ## 🖥️ Dashboard Preview
 
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│  VisionGuardAI          4 cameras online • 12 tracked • 2 alerts │
+┌───────────────────────────────────────────────────────────────────┐
+│  VisionGuardAI          4 cameras online • 12 tracked • 2 alerts  │
 ├────────────┬─────────────────────────────────┬────────────────────┤
-│ CAMERAS    │  [ Live Grid ] [ Search ] [ Heatmap ]               │
+│ CAMERAS    │  [ Live Grid ] [ Search ] [ Heatmap ]                │
 │            │                                 │  LIVE ALERTS       │
-│ Main Ent 4 │  ┌──────────┐  ┌──────────┐    │  ⚠ HIGH — Cam 1   │
-│ Food Crt 3 │  │ [cam 1]  │  │ [cam 2]  │    │  Person running    │
+│ Main Ent 4 │  ┌──────────┐  ┌──────────┐     │  ⚠ HIGH — Cam 1    │
+│ Food Crt 3 │  │ [cam 1]  │  │ [cam 2]  │     │  Person running    │
 │ Gate 3   2 │  │ 🟡🔴👤  │  │ 🟢👤👤  │    │  near exit         │
-│ Exit Cor 3 │  └──────────┘  └──────────┘    │                    │
-│            │  ┌──────────┐  ┌──────────┐    │  PERSON INTEL      │
-│ SYSTEM     │  │ [cam 3]  │  │ [cam 4]  │    │  Red jacket · male │
-│ CPU   42%  │  │ 🟢👤    │  │ 🟡👤👤  │    │  Loitering 8min    │
-│ RAM   55%  │  └──────────┘  └──────────┘    │  Zone B → Cam 1   │
+│ Exit Cor 3 │  └──────────┘  └──────────┘     │                    │
+│            │  ┌──────────┐  ┌──────────┐     │  PERSON INTEL      │
+│ SYSTEM     │  │ [cam 3]  │  │ [cam 4]  │     │  Red jacket · male │
+│ CPU   42%  │  │ 🟢👤    │  │ 🟡👤👤  │    | Loitering 8min      │
+│ RAM   55%  │  └──────────┘  └──────────┘     │  Zone B → Cam 1    │
 └────────────┴─────────────────────────────────┴────────────────────┘
 ```
 
 ---
 
-## 🧠 AI Pipeline
+##  AI Pipeline
 
 ```
 Camera Feed (RTSP / USB / HLS / Mock)
@@ -150,7 +150,7 @@ Appearance                    Pose Estimation
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Docker + Docker Compose
@@ -230,7 +230,7 @@ docker-compose restart backend
 
 ---
 
-## ⚙️ Hardware Profiles
+##  Hardware Profiles
 
 VisionGuardAI automatically detects your hardware and selects the right profile:
 
@@ -247,7 +247,7 @@ FORCE_HARDWARE_PROFILE=mid_range
 
 ---
 
-## 🔒 Privacy & Compliance
+##  Privacy & Compliance
 
 VisionGuardAI is built privacy-first:
 
@@ -259,7 +259,7 @@ VisionGuardAI is built privacy-first:
 
 ---
 
-## 🔌 API Reference
+##  API Reference
 
 All endpoints require `Authorization: Bearer <token>` except login.
 
@@ -282,7 +282,7 @@ WS     /ws/scene?token=<jwt>        Real-time scene updates
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 visionguardai/
@@ -334,7 +334,7 @@ visionguardai/
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
 - [ ] Mobile app (React Native) for on-the-go alerts
 - [ ] Multi-tenant support (multiple operators, role-based access)
@@ -346,7 +346,7 @@ visionguardai/
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome. Please open an issue first to discuss what you'd like to change.
 
@@ -358,13 +358,13 @@ Contributions are welcome. Please open an issue first to discuss what you'd like
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 VisionGuardAI is intended for deployment in locations where camera surveillance is legally permitted and disclosed to individuals being monitored. Always consult local laws and regulations (DPDP Act in India, GDPR in Europe) before deploying in any environment. The authors are not responsible for misuse.
 
 ---
 
-## 📄 License
+##  License
 
 MIT License — see [LICENSE](LICENSE) for details.
 
