@@ -12,7 +12,6 @@
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat&logo=docker&logoColor=white)](https://docker.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat)](LICENSE)
 
-![VisionGuardAI Dashboard](https://raw.githubusercontent.com/yourusername/visionguardai/main/docs/dashboard.png)
 
 </div>
 
