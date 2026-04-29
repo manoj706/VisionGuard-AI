@@ -1,0 +1,17 @@
+{$DOMAIN:localhost} {
+    encode gzip
+
+    handle /api/* {
+        reverse_proxy backend:8000
+    }
+
+    handle /ws/* {
+        reverse_proxy backend:8000
+    }
+
+    handle {
+        root * /srv/frontend
+        file_server
+        try_files {path} /index.html
+    }
+}

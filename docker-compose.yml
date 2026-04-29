@@ -1,0 +1,60 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: visionguard
+      POSTGRES_USER: visionguard
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U visionguard"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://visionguard:${DB_PASSWORD:-changeme}@db/visionguard
+      OPERATOR_USERNAME: ${OPERATOR_USERNAME:-admin}
+      OPERATOR_PASSWORD: ${OPERATOR_PASSWORD:-changeme}
+      JWT_SECRET: ${JWT_SECRET:-change-in-production}
+      MOCK_MODE: ${MOCK_MODE:-true}
+      ENABLE_REAL_MODELS: ${ENABLE_REAL_MODELS:-false}
+      PRIVACY_MODE: ${PRIVACY_MODE:-standard}
+      RETENTION_DAYS: ${RETENTION_DAYS:-30}
+      MEDIA_ROOT: /app/media
+    volumes:
+      - media:/app/media
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend-builder:
+    build: ./frontend
+    volumes:
+      - frontend_build:/srv/frontend
+
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - frontend_build:/srv/frontend
+      - caddy_data:/data
+    depends_on:
+      - backend
+      - frontend-builder
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  media:
+  caddy_data:
+  frontend_build:
